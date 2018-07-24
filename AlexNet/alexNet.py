@@ -14,11 +14,11 @@ import tensorflow as tf
 
 FLAGS = None
 
-
+#展示每一个卷积层或池化层输出tensor的尺寸
 def print_activations(t):
   print(t.op.name, ' ', t.get_shape().as_list())
 
-
+#Alex的网络结构（）
 def inference(images):
   """Build the AlexNet model.
   Args:
@@ -154,7 +154,7 @@ def time_tensorflow_run(session, target, info_string):
 
 def run_benchmark():
   """Run the benchmark on AlexNet."""
-  with tf.Graph().as_default():
+  with tf.Graph().as_default():#定义默认的graph
     # Generate some dummy images.
     image_size = 224
     # Note that our padding definition is slightly different the cuda-convnet.
